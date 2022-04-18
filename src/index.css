@@ -3,6 +3,7 @@ body {
     padding-top: 50px;
     padding-left: 100px;
     padding-right: 100px;
+    padding-bottom: 50px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -36,11 +37,10 @@ body {
     justify-content: space-between;
 }
 
-.footer {
-    padding: 50px;
-    text-align: center;
-}
-
 ul li {
     margin: 5px;
+}
+
+.det {
+    font-weight: bold;
 }

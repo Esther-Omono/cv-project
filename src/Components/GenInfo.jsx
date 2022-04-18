@@ -4,7 +4,7 @@ const GenInfo=() => {
             <div className="gen-info">
                 <h1>Esther Atakere</h1>
                 <p>enitanatakere@gmail.com</p>
-                <p>0909 006 9441</p>
+                <p>0901 234 5678</p>
             </div>
 
             <h2 className="sum-head">Summary</h2>

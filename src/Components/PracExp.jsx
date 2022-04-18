@@ -5,7 +5,7 @@ const PracExp=() => {
             <div className="prac-exp">
                 <div>
                     <p>Side Hustle</p>
-                    <p>Intern</p>
+                    <p className="det">Intern</p>
                 </div>
                 <p>4/2022 - till date</p>
             </div>

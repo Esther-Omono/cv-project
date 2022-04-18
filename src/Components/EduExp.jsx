@@ -5,7 +5,7 @@ const EduExp=() => {
             <div className="edu-exp">
                 <div>
                     <p>University of Benin(UNIBEN)</p>
-                    <p>BSc. Computer Science</p>
+                    <p className="det">BSc. Computer Science</p>
                 </div>
                 <p>10/2015 - 09/2021</p>
             </div>
