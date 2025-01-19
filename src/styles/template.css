@@ -1,0 +1,41 @@
+.header {
+    background-color: #eee;
+    margin-bottom: 10px;
+    padding: 20px;
+}
+
+.header h1 {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.header div {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.education,
+.profession {
+    padding: 20px;
+}
+
+.education h3,
+.profession h3,
+.profession h4,
+.profession .duties {
+    margin-top: 10px;
+}
+
+.education .school-details {
+    margin-top: 10px;
+    display: flex;
+    gap: 100px;
+}
+
+.education .school-date,
+.profession .work-date {
+    margin-top: 10px;
+    display: flex;
+    gap: 20px;
+}
