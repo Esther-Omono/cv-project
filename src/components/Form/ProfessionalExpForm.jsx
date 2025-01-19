@@ -4,23 +4,35 @@ export default function ProfessionalExpForm() {
       <fieldset>
         <legend>Professional Experience</legend>
 
-        <label htmlFor='companyname'>Company Name</label>
-        <input type='text' id='companyname' name='companyname' />
+        <div className='form-group'>
+          <label htmlFor='companyname'>Company Name</label>
+          <input type='text' id='companyname' name='companyname' />
+        </div>
 
-        <label htmlFor='jobtitle'>Job Title</label>
-        <input type='text' id='jobtitle' name='jobtitle' />
+        <div className='form-group'>
+          <label htmlFor='jobtitle'>Job Title</label>
+          <input type='text' id='jobtitle' name='jobtitle' />
+        </div>
 
-        <label htmlFor='startdate'>Start Date</label>
-        <input type='date' id='startdate' name='startdate' />
+        <div className='form-group'>
+          <label htmlFor='startdate'>Start Date</label>
+          <input type='date' id='startdate' name='startdate' />
+        </div>
 
-        <label htmlFor='enddate'>End Date</label>
-        <input type='date' id='enddate' name='enddate' />
+        <div className='form-group'>
+          <label htmlFor='enddate'>End Date</label>
+          <input type='date' id='enddate' name='enddate' />
+        </div>
 
-        <label htmlFor='responsibilities'>Responsibilities</label>
-        <input type='text' id='responsibilities' name='responsibilities' />
+        <div className='form-group'>
+          <label htmlFor='responsibilities'>Responsibilities</label>
+          <input type='text' id='responsibilities' name='responsibilities' />
+        </div>
 
-        <button type='button'>Edit</button>
-        <button type='submit'>Submit</button>
+        <div className='button-group'>
+          <button type='button'>Edit</button>
+          <button type='submit'>Submit</button>
+        </div>
       </fieldset>
     </form>
   );
