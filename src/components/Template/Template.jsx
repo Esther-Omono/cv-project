@@ -3,10 +3,10 @@ import Education from './Education';
 import ProfessionalExp from './ProfessionalExp';
 import '../../styles/template.css';
 
-export default function Template() {
+export default function Template({ formData }) {
   return (
     <div className='template-container'>
-      <Header />
+      <Header formData={formData} />
       <Education />
       <ProfessionalExp />
     </div>

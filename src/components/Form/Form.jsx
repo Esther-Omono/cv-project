@@ -3,10 +3,10 @@ import EducationForm from './EducationForm';
 import ProfessionalExpForm from './ProfessionalExpForm';
 import '../../styles/forms.css';
 
-export default function Form() {
+export default function Form({ onSubmit }) {
   return (
     <div className='form-container'>
-      <GeneralInfo />
+      <GeneralInfo onSubmit={onSubmit} />
       <EducationForm />
       <ProfessionalExpForm />
     </div>
