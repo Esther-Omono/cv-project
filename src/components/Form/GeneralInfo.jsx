@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 
 export default function GeneralInfo({ onSubmit }) {
   const [formData, setFormData] = useState({
@@ -78,3 +79,7 @@ export default function GeneralInfo({ onSubmit }) {
     </form>
   );
 }
+
+GeneralInfo.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+};

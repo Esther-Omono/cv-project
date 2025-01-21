@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import Header from './Header';
 import Education from './Education';
 import ProfessionalExp from './ProfessionalExp';
@@ -12,3 +13,7 @@ export default function Template({ formData }) {
     </div>
   );
 }
+
+Template.propTypes = {
+  formData: PropTypes.func.isRequired,
+};

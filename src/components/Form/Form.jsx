@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import GeneralInfo from './GeneralInfo';
 import EducationForm from './EducationForm';
 import ProfessionalExpForm from './ProfessionalExpForm';
@@ -12,3 +13,7 @@ export default function Form({ onSubmit }) {
     </div>
   );
 }
+
+Form.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+};
