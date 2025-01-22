@@ -31,9 +31,9 @@ export default function Form({
 }
 
 Form.propTypes = {
-  initialGeneralData: PropTypes.func.isRequired,
-  initialEducationData: PropTypes.func.isRequired,
-  initialWorkData: PropTypes.func.isRequired,
+  initialGeneralData: PropTypes.object.isRequired,
+  initialEducationData: PropTypes.object.isRequired,
+  initialWorkData: PropTypes.object.isRequired,
   onGeneralSubmit: PropTypes.func.isRequired,
   onEducationSubmit: PropTypes.func.isRequired,
   onWorkSubmit: PropTypes.func.isRequired,

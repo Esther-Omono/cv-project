@@ -116,6 +116,6 @@ export default function ProfessionalExpForm({ initialData, onSubmit }) {
 }
 
 ProfessionalExpForm.propTypes = {
-  initialData: PropTypes.func.isRequired,
+  initialData: PropTypes.object.isRequired,
   onSubmit: PropTypes.func.isRequired,
 };

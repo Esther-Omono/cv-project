@@ -130,6 +130,6 @@ export default function EducationForm({ initialData, onSubmit }) {
 }
 
 EducationForm.propTypes = {
-  initialData: PropTypes.func.isRequired,
+  initialData: PropTypes.object.isRequired,
   onSubmit: PropTypes.func.isRequired,
 };

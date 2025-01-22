@@ -99,6 +99,6 @@ export default function GeneralInfo({ initialData, onSubmit }) {
 }
 
 GeneralInfo.propTypes = {
-  initialData: PropTypes.func.isRequired,
+  initialData: PropTypes.object.isRequired,
   onSubmit: PropTypes.func.isRequired,
 };
