@@ -1,30 +1,39 @@
+/* Header Component */
 .header {
-    background-color: #eee;
-    margin-bottom: 10px;
-    padding: 20px;
-}
-
-.header h1 {
+    background-color: #4a90e2;
+    color: white;
+    padding: 1rem 2rem;
     text-align: center;
-    margin-bottom: 5px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+  
+.header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+  
+.header h4 {
+    font-size: 1rem;
+    font-weight: 400;
 }
 
-.header div {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-}
-
+/* Education Component*/
 .education,
 .profession {
-    padding: 20px;
+    background: white;
+    padding: 2em;
 }
 
-.education h3,
-.profession h3,
-.profession h4,
-.profession .duties {
-    margin-top: 10px;
+.education h2 {
+    font-size: 1.8rem;
+    color: #4a90e2;
+    margin-bottom: 1rem;
+}
+  
+.education h3 {
+    font-size: 1.5rem;
+    color: #333;
 }
 
 .education .school-details {
@@ -33,9 +42,54 @@
     gap: 20px;
 }
 
-.education .school-date,
-.profession .work-date {
-    margin-top: 10px;
-    display: flex;
-    gap: 20px;
+.education .school-details h4 {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #555;
+    margin-bottom: 0.2rem;
+}
+
+.education .school-date p {
+    font-style: italic;
+    color: #888;
+    margin-bottom: -2rem;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: #ddd;
+    margin: 1rem 0;
+}
+
+/* Professional Experience Component */
+.profession h2 {
+    font-size: 1.8rem;
+    color: #4a90e2;
+    margin-bottom: 1rem;
+}
+
+.profession h3 {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.profession h4 {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #555;
+}
+
+.profession .work-date p {
+    font-style: italic;
+    color: #888;
+}
+
+.profession .duties {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #f1f1f1;
+    border-left: 4px solid #4a90e2;
+    color: #555;
+    border-radius: 4px;
 }
