@@ -128,10 +128,14 @@ export default function ProfessionalExpForm({ initialData, onSubmit }) {
             value={currentResponsibility}
             onChange={(e) => setCurrentResponsibility(e.target.value)}
           />
-          <button type='button' onClick={handleAddResponsibility}>
+          <button
+            className='resp-btn'
+            type='button'
+            onClick={handleAddResponsibility}
+          >
             Add Responsibility
           </button>
-          <ul>
+          <ul className='resp-list'>
             {workData.responsibilities.map((duty, index) => (
               <li key={index}>
                 {duty}{' '}
