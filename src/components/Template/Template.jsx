@@ -4,16 +4,17 @@ import Education from './Education';
 import ProfessionalExp from './ProfessionalExp';
 import '../../styles/template.css';
 
-export default function Template({ formData }) {
+export default function Template({ generalData, educationData }) {
   return (
     <div className='template-container'>
-      <Header formData={formData} />
-      <Education />
+      <Header generalData={generalData} />
+      <Education educationData={educationData} />
       <ProfessionalExp />
     </div>
   );
 }
 
 Template.propTypes = {
-  formData: PropTypes.func.isRequired,
+  generalData: PropTypes.object.isRequired,
+  educationData: PropTypes.object.isRequired,
 };

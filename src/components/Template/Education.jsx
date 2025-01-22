@@ -1,22 +1,28 @@
-export default function Education() {
+import PropTypes from "prop-types";
+
+export default function Education({ educationData }) {
   return (
     <div className='education'>
       <h2>Education</h2>
 
       <hr />
 
-      <h3>School Name</h3>
+      <h3>{educationData.schoolname}</h3>
 
       <div className='school-details'>
-        <h4>Degree</h4>
-        <h4>Course of Study</h4>
-        <h4>Grade</h4>
+        <h4>{educationData.degree}</h4>
+        <h4>{educationData.course}</h4>
+        <h4>{educationData.grade}</h4>
       </div>
 
       <div className='school-date'>
-        <p>Start Date</p>
-        <p>End Date</p>
+        <p>{educationData.startdate}</p>
+        <p>{educationData.enddate}</p>
       </div>
     </div>
   );
 }
+
+Education.propTypes = {
+  educationData: PropTypes.object.isRequired,
+};

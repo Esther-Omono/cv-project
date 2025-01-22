@@ -2,7 +2,7 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 
 export default function GeneralInfo({ onSubmit }) {
-  const [formData, setFormData] = useState({
+  const [generalData, setGeneralData] = useState({
     firstname: '',
     lastName: '',
     email: '',
@@ -11,7 +11,7 @@ export default function GeneralInfo({ onSubmit }) {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prevData) => ({
+    setGeneralData((prevData) => ({
       ...prevData,
       [name]: value,
     }));
@@ -19,7 +19,7 @@ export default function GeneralInfo({ onSubmit }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit(formData);
+    onSubmit(generalData);
   };
 
   return (
@@ -33,7 +33,7 @@ export default function GeneralInfo({ onSubmit }) {
             type='text'
             id='firstname'
             name='firstname'
-            value={formData.firstname}
+            value={generalData.firstname || ''}
             onChange={handleChange}
           />
         </div>
@@ -44,7 +44,7 @@ export default function GeneralInfo({ onSubmit }) {
             type='text'
             id='lastname'
             name='lastname'
-            value={formData.lastname}
+            value={generalData.lastname || ''}
             onChange={handleChange}
           />
         </div>
@@ -55,7 +55,7 @@ export default function GeneralInfo({ onSubmit }) {
             type='email'
             id='email'
             name='email'
-            value={formData.email}
+            value={generalData.email || ''}
             onChange={handleChange}
           />
         </div>
@@ -66,7 +66,7 @@ export default function GeneralInfo({ onSubmit }) {
             type='tel'
             id='phonenumber'
             name='phonenumber'
-            value={formData.phonenumber}
+            value={generalData.phonenumber || ''}
             onChange={handleChange}
           />
         </div>
