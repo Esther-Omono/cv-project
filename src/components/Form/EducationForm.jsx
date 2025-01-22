@@ -61,7 +61,7 @@ export default function EducationForm({ initialData, onSubmit }) {
             type='text'
             id='schoolname'
             name='schoolname'
-            value={educationData.schoolname}
+            value={educationData.schoolname || ''}
             onChange={handleChange}
           />
         </div>
@@ -72,7 +72,7 @@ export default function EducationForm({ initialData, onSubmit }) {
             type='text'
             id='degree'
             name='degree'
-            value={educationData.degree}
+            value={educationData.degree || ''}
             onChange={handleChange}
           />
         </div>
@@ -83,7 +83,7 @@ export default function EducationForm({ initialData, onSubmit }) {
             type='text'
             id='course'
             name='course'
-            value={educationData.course}
+            value={educationData.course || ''}
             onChange={handleChange}
           />
         </div>
@@ -94,7 +94,7 @@ export default function EducationForm({ initialData, onSubmit }) {
             type='text'
             id='grade'
             name='grade'
-            value={educationData.grade}
+            value={educationData.grade || ''}
             onChange={handleChange}
           />
         </div>
@@ -105,7 +105,7 @@ export default function EducationForm({ initialData, onSubmit }) {
             type='date'
             id='startdate'
             name='startdate'
-            value={educationData.startdate}
+            value={educationData.startdate || ''}
             onChange={handleChange}
           />
         </div>
@@ -116,7 +116,7 @@ export default function EducationForm({ initialData, onSubmit }) {
             type='date'
             id='enddate'
             name='enddate'
-            value={educationData.enddate}
+            value={educationData.enddate || ''}
             onChange={handleChange}
           />
         </div>
