@@ -1,14 +1,9 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 
-export default function ProfessionalExpForm({ onSubmit }) {
-  const [workData, setWorkData] = useState({
-    companyname: '',
-    jobtitle: '',
-    startdate: '',
-    enddate: '',
-    responsibilities: '',
-  });
+export default function ProfessionalExpForm({ initialData, onSubmit }) {
+  const [isEditing, setIsEditing] = useState(true);
+  const [workData, setWorkData] = useState(initialData);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -21,7 +16,36 @@ export default function ProfessionalExpForm({ onSubmit }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     onSubmit(workData);
+    setIsEditing(false);
   };
+
+  if (!isEditing) {
+    return (
+      <div className='display-section'>
+        <fieldset>
+          <legend>Professional Experience</legend>
+          <p>
+            <b>Company Name:</b> {workData.companyname}
+          </p>
+          <p>
+            <b>Job Title:</b> {workData.jobtitle}
+          </p>
+          <p>
+            <b>Start Date:</b> {workData.startdate}
+          </p>
+          <p>
+            <b>End Date:</b> {workData.enddate}
+          </p>
+          <p>
+            <b>Responsibilities:</b> {workData.responsibilities}
+          </p>
+          <button type='button' onClick={() => setIsEditing(true)}>
+            Edit
+          </button>
+        </fieldset>
+      </div>
+    );
+  }
 
   return (
     <form onSubmit={handleSubmit}>
@@ -84,7 +108,6 @@ export default function ProfessionalExpForm({ onSubmit }) {
         </div>
 
         <div className='button-group'>
-          <button type='button'>Edit</button>
           <button type='submit'>Submit</button>
         </div>
       </fieldset>
@@ -93,5 +116,6 @@ export default function ProfessionalExpForm({ onSubmit }) {
 }
 
 ProfessionalExpForm.propTypes = {
+  initialData: PropTypes.func.isRequired,
   onSubmit: PropTypes.func.isRequired,
 };

@@ -1,13 +1,9 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 
-export default function GeneralInfo({ onSubmit }) {
-  const [generalData, setGeneralData] = useState({
-    firstname: '',
-    lastName: '',
-    email: '',
-    phonenumber: '',
-  });
+export default function GeneralInfo({ initialData, onSubmit }) {
+  const [isEditing, setIsEditing] = useState(true);
+  const [generalData, setGeneralData] = useState(initialData);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -20,7 +16,30 @@ export default function GeneralInfo({ onSubmit }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     onSubmit(generalData);
+    setIsEditing(false);
   };
+
+  if (!isEditing) {
+    return (
+      <div className='display-section'>
+        <fieldset>
+          <legend>General Information</legend>
+          <p>
+            <b>Name:</b> {generalData.firstname} {generalData.lastName}
+          </p>
+          <p>
+            <b>Email:</b> {generalData.email}
+          </p>
+          <p>
+            <b>Phone:</b> {generalData.phonenumber}
+          </p>
+          <button type='button' onClick={() => setIsEditing(true)}>
+            Edit
+          </button>
+        </fieldset>
+      </div>
+    );
+  }
 
   return (
     <form onSubmit={handleSubmit}>
@@ -72,7 +91,6 @@ export default function GeneralInfo({ onSubmit }) {
         </div>
 
         <div className='button-group'>
-          <button type='button'>Edit</button>
           <button type='submit'>Submit</button>
         </div>
       </fieldset>
@@ -81,5 +99,6 @@ export default function GeneralInfo({ onSubmit }) {
 }
 
 GeneralInfo.propTypes = {
+  initialData: PropTypes.func.isRequired,
   onSubmit: PropTypes.func.isRequired,
 };

@@ -1,28 +1,54 @@
-import { useState } from "react";
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 
-export default function EducationForm({ onSubmit }) {
-  const [educationData, setEducationData] = useState({
-    schoolname: '',
-    degree: '',
-    course: '',
-    grade: '',
-    startdate: '',
-    enddate: '',
-  })
+export default function EducationForm({ initialData, onSubmit }) {
+  const [isEditing, setIsEditing] = useState(true);
+  const [educationData, setEducationData] = useState(initialData);
 
-    const handleChange = (e) => {
-      const { name, value } = e.target;
-      setEducationData((prevData) => ({
-        ...prevData,
-        [name]: value,
-      }));
-    };
-  
-    const handleSubmit = (e) => {
-      e.preventDefault();
-      onSubmit(educationData);
-    };
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setEducationData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onSubmit(educationData);
+    setIsEditing(false);
+  };
+
+  if (!isEditing) {
+    return (
+      <div className='display-section'>
+        <fieldset>
+          <legend>Education</legend>
+          <p>
+            <b>School Name:</b> {educationData.schoolname}
+          </p>
+          <p>
+            <b>Degree:</b> {educationData.degree}
+          </p>
+          <p>
+            <b>Course:</b> {educationData.course}
+          </p>
+          <p>
+            <b>Grade:</b> {educationData.grade}
+          </p>
+          <p>
+            <b>Start Date:</b> {educationData.startdate}
+          </p>
+          <p>
+            <b>End Date:</b> {educationData.enddate}
+          </p>
+          <button type='button' onClick={() => setIsEditing(true)}>
+            Edit
+          </button>
+        </fieldset>
+      </div>
+    );
+  }
 
   return (
     <form onSubmit={handleSubmit}>
@@ -96,7 +122,6 @@ export default function EducationForm({ onSubmit }) {
         </div>
 
         <div className='button-group'>
-          <button type='button'>Edit</button>
           <button type='submit'>Submit</button>
         </div>
       </fieldset>
@@ -105,5 +130,6 @@ export default function EducationForm({ onSubmit }) {
 }
 
 EducationForm.propTypes = {
+  initialData: PropTypes.func.isRequired,
   onSubmit: PropTypes.func.isRequired,
 };

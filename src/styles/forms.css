@@ -1,7 +1,15 @@
+.display-section {
+  margin-bottom: 20px;
+}
+
+.display-section button {
+  margin: 15px 0;
+}
+
 form {
-    width: 100%;
-    max-width: 500px;
-    padding: 20px;
+  width: 100%;
+  max-width: 500px;
+  padding: 20px;
 }
 
 fieldset {
@@ -35,16 +43,16 @@ input {
 }
 
 input[type="date"] {
-    appearance: none;
-    -webkit-appearance: none;
-    background-color: white;
-    cursor: pointer;
-    padding: 8px;
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: white;
+  cursor: pointer;
+  padding: 8px;
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
-    cursor: pointer;
-    padding: 2px;
+  cursor: pointer;
+  padding: 2px;
 }
 
 input:focus {

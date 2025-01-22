@@ -43,6 +43,9 @@ function App() {
   return (
     <div className='wrapper'>
       <Form
+        initialGeneralData={generalData}
+        initialEducationData={educationData}
+        initialWorkData={workData}
         onGeneralSubmit={handleGeneralSubmit}
         onEducationSubmit={handleEducationSubmit}
         onWorkSubmit={handleWorkSubmit}
