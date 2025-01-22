@@ -16,11 +16,21 @@ export default function ProfessionalExp({ workData }) {
         </p>
       </div>
 
-      <p className='duties'>{workData.responsibilities}</p>
+      <ul className='duties'>
+        {workData.responsibilities.map((duty, index) => (
+          <li key={index}>{duty}</li>
+        ))}
+      </ul>
     </div>
   );
 }
 
 ProfessionalExp.propTypes = {
-  workData: PropTypes.object.isRequired,
+  workData: PropTypes.shape({
+    companyname: PropTypes.string.isRequired,
+    jobtitle: PropTypes.string.isRequired,
+    startdate: PropTypes.string.isRequired,
+    enddate: PropTypes.string.isRequired,
+    responsibilities: PropTypes.arrayOf(PropTypes.string).isRequired,
+  }).isRequired,
 };

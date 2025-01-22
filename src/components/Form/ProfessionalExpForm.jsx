@@ -4,12 +4,30 @@ import PropTypes from 'prop-types';
 export default function ProfessionalExpForm({ initialData, onSubmit }) {
   const [isEditing, setIsEditing] = useState(true);
   const [workData, setWorkData] = useState(initialData);
+  const [currentResponsibility, setCurrentResponsibility] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setWorkData((prevData) => ({
       ...prevData,
       [name]: value,
+    }));
+  };
+
+  const handleAddResponsibility = () => {
+    if (currentResponsibility.trim()) {
+      setWorkData((prevData) => ({
+        ...prevData,
+        responsibilities: [...prevData.responsibilities, currentResponsibility],
+      }));
+      setCurrentResponsibility('');
+    }
+  };
+
+  const handleRemoveResponsibility = (index) => {
+    setWorkData((prevData) => ({
+      ...prevData,
+      responsibilities: prevData.responsibilities.filter((_, i) => i !== index),
     }));
   };
 
@@ -37,8 +55,13 @@ export default function ProfessionalExpForm({ initialData, onSubmit }) {
             <b>End Date:</b> {workData.enddate}
           </p>
           <p>
-            <b>Responsibilities:</b> {workData.responsibilities}
+            <b>Responsibilities:</b>
           </p>
+          <ul>
+            {workData.responsibilities.map((duty, index) => (
+              <li key={index}>{duty}</li>
+            ))}
+          </ul>
           <button type='button' onClick={() => setIsEditing(true)}>
             Edit
           </button>
@@ -102,9 +125,25 @@ export default function ProfessionalExpForm({ initialData, onSubmit }) {
             type='text'
             id='responsibilities'
             name='responsibilities'
-            value={workData.responsibilities || ''}
-            onChange={handleChange}
+            value={currentResponsibility}
+            onChange={(e) => setCurrentResponsibility(e.target.value)}
           />
+          <button type='button' onClick={handleAddResponsibility}>
+            Add Responsibility
+          </button>
+          <ul>
+            {workData.responsibilities.map((duty, index) => (
+              <li key={index}>
+                {duty}{' '}
+                <button
+                  type='button'
+                  onClick={() => handleRemoveResponsibility(index)}
+                >
+                  Remove
+                </button>
+              </li>
+            ))}
+          </ul>
         </div>
 
         <div className='button-group'>
@@ -116,6 +155,12 @@ export default function ProfessionalExpForm({ initialData, onSubmit }) {
 }
 
 ProfessionalExpForm.propTypes = {
-  initialData: PropTypes.object.isRequired,
+  initialData: PropTypes.shape({
+    companyname: PropTypes.string,
+    jobtitle: PropTypes.string,
+    startdate: PropTypes.string,
+    enddate: PropTypes.string,
+    responsibilities: PropTypes.arrayOf(PropTypes.string),
+  }).isRequired,
   onSubmit: PropTypes.func.isRequired,
 };

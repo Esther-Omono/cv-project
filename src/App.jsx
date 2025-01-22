@@ -25,7 +25,7 @@ function App() {
     jobtitle: '',
     startdate: '',
     enddate: '',
-    responsibilities: '',
+    responsibilities: [],
   });
 
   const handleGeneralSubmit = (data) => {
