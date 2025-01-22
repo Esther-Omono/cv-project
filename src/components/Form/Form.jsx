@@ -4,12 +4,16 @@ import EducationForm from './EducationForm';
 import ProfessionalExpForm from './ProfessionalExpForm';
 import '../../styles/forms.css';
 
-export default function Form({ onGeneralSubmit, onEducationSubmit }) {
+export default function Form({
+  onGeneralSubmit,
+  onEducationSubmit,
+  onWorkSubmit,
+}) {
   return (
     <div className='form-container'>
       <GeneralInfo onSubmit={onGeneralSubmit} />
-      <EducationForm onSubmit={onEducationSubmit}/>
-      <ProfessionalExpForm />
+      <EducationForm onSubmit={onEducationSubmit} />
+      <ProfessionalExpForm onSubmit={onWorkSubmit} />
     </div>
   );
 }
@@ -17,4 +21,5 @@ export default function Form({ onGeneralSubmit, onEducationSubmit }) {
 Form.propTypes = {
   onGeneralSubmit: PropTypes.func.isRequired,
   onEducationSubmit: PropTypes.func.isRequired,
+  onWorkSubmit: PropTypes.func.isRequired,
 };

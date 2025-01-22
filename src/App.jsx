@@ -18,7 +18,15 @@ function App() {
     grade: '',
     startdate: '',
     enddate: '',
-  })
+  });
+
+  const [workData, setWorkData] = useState({
+    companyname: '',
+    jobtitle: '',
+    startdate: '',
+    enddate: '',
+    responsibilities: '',
+  });
 
   const handleGeneralSubmit = (data) => {
     setGeneralData(data);
@@ -28,15 +36,21 @@ function App() {
     setEducationData(data);
   };
 
+  const handleWorkSubmit = (data) => {
+    setWorkData(data);
+  };
+
   return (
     <div className='wrapper'>
       <Form
         onGeneralSubmit={handleGeneralSubmit}
         onEducationSubmit={handleEducationSubmit}
+        onWorkSubmit={handleWorkSubmit}
       />
       <Template
-       generalData={generalData}
-       educationData={educationData}
+        generalData={generalData}
+        educationData={educationData}
+        workData={workData}
       />
     </div>
   );

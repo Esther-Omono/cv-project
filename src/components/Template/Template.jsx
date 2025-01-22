@@ -4,12 +4,12 @@ import Education from './Education';
 import ProfessionalExp from './ProfessionalExp';
 import '../../styles/template.css';
 
-export default function Template({ generalData, educationData }) {
+export default function Template({ generalData, educationData, workData }) {
   return (
     <div className='template-container'>
       <Header generalData={generalData} />
       <Education educationData={educationData} />
-      <ProfessionalExp />
+      <ProfessionalExp workData={workData} />
     </div>
   );
 }
@@ -17,4 +17,5 @@ export default function Template({ generalData, educationData }) {
 Template.propTypes = {
   generalData: PropTypes.object.isRequired,
   educationData: PropTypes.object.isRequired,
+  workData: PropTypes.object.isRequired,
 };
