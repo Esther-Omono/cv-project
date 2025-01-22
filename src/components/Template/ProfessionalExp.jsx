@@ -11,8 +11,9 @@ export default function ProfessionalExp({ workData }) {
       <h4>{workData.jobtitle}</h4>
 
       <div className='work-date'>
-        <p>{workData.startdate}</p>
-        <p>{workData.enddate}</p>
+        <p>
+          {workData.startdate} - {workData.enddate}
+        </p>
       </div>
 
       <p className='duties'>{workData.responsibilities}</p>

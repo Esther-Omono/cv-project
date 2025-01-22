@@ -1,4 +1,4 @@
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
 export default function Education({ educationData }) {
   return (
@@ -16,8 +16,9 @@ export default function Education({ educationData }) {
       </div>
 
       <div className='school-date'>
-        <p>{educationData.startdate}</p>
-        <p>{educationData.enddate}</p>
+        <p>
+          {educationData.startdate} - {educationData.enddate}
+        </p>
       </div>
     </div>
   );
